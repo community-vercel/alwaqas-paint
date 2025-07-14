@@ -14,12 +14,12 @@ export default function ChatbotLoader() {
         userId: "686547c645cf8b6b8a7d157d",
         websiteDomain: "https://www.alwaqaspaint.com",
         position: "bottom-right",
-        theme: {
-          primary: "#7C3AED",
-          secondary: "#F59E0B",
+         theme: {
+          primary: "#00A63E",
+          secondary: "#00A63E",
           background: "#FFFFFF",
           text: "#1F2937",
-          buttonText: "#FFFFFF"
+          buttonText: "#00A63E"
         }
       };
       setTimeout(() => {
