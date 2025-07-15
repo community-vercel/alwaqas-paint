@@ -5,7 +5,7 @@ module.exports = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'alwaqaspaint.com' }],
-        destination: 'https://alwaqaspaint.com/:path*',
+        destination: 'https://www.alwaqaspaint.com/:path*',
         permanent: true,
       },
     ];
