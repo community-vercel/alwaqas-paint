@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
- 
-Sitemap: https://alwaqaspaint.com/sitemap.xml
+Disallow: /_next/
+Disallow: /api/
+Sitemap: https://www.alwaqaspaint.com/sitemap.xml
