@@ -3,8 +3,11 @@ import Image from 'next/image';
 
 // WhatsApp-optimized configuration
 const whatsappConfig = {
-  imageVersion: "1.0", // Change this when image updates
+  // Use static version number (change only when image updates)
+  imageVersion: "1.0",
+  // Your existing image URL
   baseImageUrl: "https://www.alwaqaspaint.com/Brilliance-Matt-Enamel-1.png",
+  // WhatsApp requires explicit dimensions
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -24,14 +27,14 @@ export const metadata = {
     title: "Nippon Brilliance Matt Enamel | Alwaqas Paint",
     description: "Anti-fungal enamel with stain-resisting properties, ideal for kitchens, bathrooms and high-traffic areas.",
     url: pageUrl,
-    type: "product",
+    type: "website",
     images: [
       {
         url: productImageUrl,
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Nippon Brilliance Matt Enamel Product",
-        type: "image/png",
+        type: "image/png", // Explicit type declaration
       },
     ],
     siteName: "Alwaqas Paint",
@@ -43,6 +46,7 @@ export const metadata = {
     images: [productImageUrl],
   },
   other: {
+    // WhatsApp-specific tags
     "og:image:secure_url": productImageUrl,
     "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
@@ -51,7 +55,7 @@ export const metadata = {
   }
 };
 
-const NipponHiBondWall = () => {
+const NipponBrillianceMattEnamel = () => {
   const productName = "Nippon Brilliance Matt Enamel";
   const productDescription = "Nippon Brilliance Matt Enamel is a premium quality anti-fungal enamel recommended for interior walls, wood and metal. It forms a luxurious smooth matt finish that is highly washable. With its stain-resisting properties it is extremely suitable for kitchens, bathrooms, corridors and staircases.";
 
@@ -74,7 +78,7 @@ const NipponHiBondWall = () => {
                 width={64}
                 height={64}
                 className="rounded-lg object-contain w-full h-full"
-                priority
+                priority // Important for above-the-fold images
               />
             </div>
           </div>
@@ -92,4 +96,4 @@ const NipponHiBondWall = () => {
   );
 };
 
-export default NipponHiBondWall;
+export default NipponBrillianceMattEnamel;
