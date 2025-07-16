@@ -35,9 +35,9 @@ const NipponExpresskote = () => {
   return (
     <>   
      <Head>
-    <meta property="og:title" content="WhatsApp"/>
-  <meta property="og:description" content="Simple. Secure. Reliable messaging."/>
-  <meta property="og:url" content="https://whatsapp.com"/>
+    <meta property="og:title" content="Nippon ACS Putty"/>
+  <meta property="og:description" content="A high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces"/>
+  <meta property="og:url" content="https://www.alwaqaspaint.com"/>
   <meta property="og:image"content="https://www.alwaqaspaint.com/ACS-Putty-1.png"/>
     </Head>
     <BaseProductDetail
