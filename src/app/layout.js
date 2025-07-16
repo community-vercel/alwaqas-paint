@@ -25,8 +25,8 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
-    title: "Al-Waqas Paint | Premium Coatings",
-    description: "Explore high-quality Nippon and Dulux paints for interiors, exteriors, and specialty surfaces at Al-Waqas Paint.",
+    title: "..Al-Waqas Paint | Premium Coatings",
+    description: "..Explore high-quality Nippon and Dulux paints for interiors, exteriors, and specialty surfaces at Al-Waqas Paint.",
     url: "https://alwaqaspaint.com",
     type: "website",
     site_name: "Al-Waqas Paint",

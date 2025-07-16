@@ -1,12 +1,14 @@
-// components/products/NipponOdourlessAircare.jsx
 import BaseProductDetail from './../../../components/interior/BaseProductDetail';
 import Image from 'next/image';
 import Head from 'next/head';
 
 const NipponExpresskote = () => {
   const productName = "Nippon ACS Putty";
-  const productDescription = "A high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces.";
-  const productImageUrl = "https://www.alwaqaspaint.com/_next/image?url=%2FACS-Putty-1.png&w=640&q=75"; // Use absolute URL
+  const productDescription = " high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces.";
+  
+  // Use direct absolute URL to a high-quality image (minimum 300x300 pixels recommended for WhatsApp)
+  const productImageUrl = "https://www.alwaqaspaint.com/_next/image?url=%2FACS-Putty-1.png&w=640&q=75";
+  const pageUrl = "https://www.alwaqaspaint.com/products/nippon-acs-putty";
 
   return (
     <>
@@ -16,23 +18,30 @@ const NipponExpresskote = () => {
         <meta name="title" content={`${productName} | Alwaqas Paint`} />
         <meta name="description" content={productDescription} />
 
-        {/* Open Graph / Facebook */}
+        {/* Open Graph / Facebook & WhatsApp */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.alwaqaspaint.com/products/nippon-acs-putty" />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:title" content={`${productName} | Alwaqas Paint`} />
         <meta property="og:description" content={productDescription} />
         <meta property="og:image" content={productImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={productName} />
+        <meta property="og:site_name" content="Alwaqas Paint" />
 
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.alwaqaspaint.com/products/nippon-acs-putty" />
-        <meta property="twitter:title" content={`${productName} | Alwaqas Paint`} />
-        <meta property="twitter:description" content={productDescription} />
-        <meta property="twitter:image" content={productImageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={pageUrl} />
+        <meta name="twitter:title" content={`${productName} | Alwaqas Paint`} />
+        <meta name="twitter:description" content={productDescription} />
+        <meta name="twitter:image" content={productImageUrl} />
+        <meta name="twitter:image:alt" content={productName} />
+
+        {/* Additional WhatsApp-specific tags (optional) */}
+        <meta property="og:image:secure_url" content={productImageUrl} />
       </Head>
 
+      {/* Rest of your component remains the same */}
       <BaseProductDetail
         productName={productName}
         productImage="/ACS-Putty-1.png"
@@ -70,3 +79,4 @@ const NipponExpresskote = () => {
 };
 
 export default NipponExpresskote;
+
