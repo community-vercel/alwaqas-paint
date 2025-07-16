@@ -1,4 +1,4 @@
-import BaseProductDetail from './../../../components/interior/BaseProductDetail';
+import BaseProductDetail from './../../components/interior/BaseProductDetail';
 import Image from 'next/image';
 
 // WhatsApp-optimized configuration
