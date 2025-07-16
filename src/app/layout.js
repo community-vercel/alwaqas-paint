@@ -16,26 +16,29 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 export const metadata = {
-  title: "Al-Waqas Paint | Premium Coatings",
-  description: "Discover premium Nippon and Dulux coatings for interiors, exteriors, and specialty surfaces.",
-  keywords: "Nippon paint, Dulux paint, premium coatings, interior paint, exterior paint, eco-friendly paint, Islamabad paint store , Al Waqas Paint",
-  author: "Al-Waqas Paint",
+  title: {
+    template: '%s | Al-Waqas Paint',
+    default: 'Al-Waqas Paint | Premium Coatings'
+  },
+  description: "Premium Nippon and Dulux coatings for interiors, exteriors, and specialty surfaces.",
+  keywords: "Nippon paint, Dulux paint, premium coatings, interior paint, exterior paint",
+  authors: [{ name: 'Al-Waqas Paint' }],
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
-    title: "..Al-Waqas Paint | Premium Coatings",
-    description: "..Explore high-quality Nippon and Dulux paints for interiors, exteriors, and specialty surfaces at Al-Waqas Paint.",
-    url: "https://alwaqaspaint.com",
     type: "website",
     site_name: "Al-Waqas Paint",
+    images: [
+      {
+        url: "https://www.alwaqaspaint.com/logoal-.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
-  facebook: {
+  twitter: {
     card: "summary_large_image",
-    title: "Al-Waqas Paint | Premium Coatings",
-    description: "Discover premium Nippon and Dulux coatings for all surfaces at Al-Waqas Paint.",
-    site: "@alwaqaspaint",
   },
 };
 
