@@ -1,56 +1,99 @@
-// components/products/NipponOdourlessAircare.jsx
 import BaseProductDetail from './../../../components/interior/BaseProductDetail';
 import Image from 'next/image';
 
-const NipponHiBondWall = () => {
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/Momento-Special-Effect-sparkle-pearl.png",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/products/nippon-momento-pearl-frost';
+
+export const metadata = {
+  title: "Nippon Momento - Pearl Frost | Alwaqas Paint",
+  description: "Special effect paint with a sparkling pearl finish, low VOC, and eco-friendly formulation for interior walls.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Nippon Momento - Pearl Frost | Alwaqas Paint",
+    description: "Transform walls with a sparkling pearl finish, hiding surface imperfections with an eco-friendly, low-odor formula.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Nippon Momento Pearl Frost Product",
+        type: "image/png",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nippon Momento - Pearl Frost | Alwaqas Paint",
+    description: "Eco-friendly special effect paint with a sparkling pearl finish for stunning interior walls.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/png",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Nippon Momento Pearl Frost Product",
+  }
+};
+
+const NipponMomentoPearlFrost = () => {
+  const productName = "Nippon Momento - Pearl Frost";
+  const productDescription = "Momento Sparkle lets you recreate intricate works of Italian craftsmanship in your home with its distinctive special effects that turn ordinary walls into extraordinary masterpieces. Momento Sparkle is formulated with low VOC, contains no lead or mercury, and is formaldehyde-free.";
+
   return (
     <BaseProductDetail
-      productName="Nippon Momento – Pearl Frost
-
-"
+      productName={productName}
       productImage="/Momento-Special-Effect-sparkle-pearl.png"
       category=""
       productDescription={
         <div className="prose max-w-none">
           <p className="mb-4">
-Nippon Momento – Pearl Frost
-Momento Sparkle let’s you recreate intricate works of Italian craftsmanship in your home with its distinctive special effects that turn ordinary walls into extraordinary masterpieces. Momento Sparkle is formulated with low VOC, contains no lead or mercury and formaldehyde-free. 
-        </p>
-          
-          
-           
-               
-          
-
-   
-  
-
-        </div>}
-      highlights={[
-        
-        "Adds a dash of glitz to walls for a finish that sparkles like a gem",
-        "Hides unevenness of the wall surface",
-        "Low odour, environmental friendly",
-
-     
-      ]}
-    //   features={[
-    //     "Formaldehyde absorption technology",
-    //     "Low odor formulation",
-    //     "Excellent coverage and durability",
-    //     "Easy application and smooth finish"
-    //   ]}
-    //   specifications={[
-    //     { name: "Coverage", value: "12-14 sqm/litre" },
-    //     { name: "Drying Time", value: "1-2 hours" },
-    //     { name: "Recoat Time", value: "4-6 hours" },
-    //     { name: "Finish", value: "Eggshell" }
-    //   ]}
+            {productDescription}
+          </p>
+        </div>
+      }
+      features={
+        [
+          "Special sparkling pearl effect",
+          "Low VOC formulation",
+          "Formaldehyde-free",
+          "Hides surface imperfections"
+        ]
+      }
+      highlights={
+        [
+          "Adds a dash of glitz to walls for a finish that sparkles like a gem",
+          "Hides unevenness of the wall surface",
+          "Low odour, environmentally friendly"
+        ]
+      }
+      specifications={
+        [
+          { name: "Coverage", value: "10-12 sqm/litre" },
+          { name: "Drying Time", value: "1-2 hours" },
+          { name: "Recoat Time", value: "4-6 hours" },
+          { name: "Finish", value: "Sparkle" }
+        ]
+      }
       technicalDataSheetUrl="/pdf/NPPK-TDS-Momento-1.pdf"
       shadeCardsUrl="/pdf/namecheap-order-153116483_compressed-1 (8).pdf"
-      
     />
   );
 };
 
-export default NipponHiBondWall;
+export default NipponMomentoPearlFrost;
