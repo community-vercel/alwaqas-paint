@@ -1,9 +1,19 @@
 import BaseProductDetail from './../../../components/interior/BaseProductDetail';
 import Image from 'next/image';
 
-// Add cache-busting parameter
-const imageVersion = Date.now();
-const productImageUrl = `https://www.alwaqaspaint.com/ACS-Putty-1.png?${imageVersion}`;
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  // Use static version number (change only when image updates)
+  imageVersion: "1.0",
+  // Your existing image URL
+  baseImageUrl: "https://www.alwaqaspaint.com/ACS-Putty-1.png",
+  // WhatsApp requires explicit dimensions
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
 const pageUrl = 'https://www.alwaqaspaint.com/products/nippon-acs-putty';
 
 export const metadata = {
@@ -21,9 +31,10 @@ export const metadata = {
     images: [
       {
         url: productImageUrl,
-        width: 1200,
-        height: 630,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
         alt: "Nippon ACS Putty Product",
+        type: "image/png", // Explicit type declaration
       },
     ],
     siteName: "Alwaqas Paint",
@@ -35,7 +46,12 @@ export const metadata = {
     images: [productImageUrl],
   },
   other: {
+    // WhatsApp-specific tags
     "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/png",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Nippon ACS Putty Product",
   }
 };
 
@@ -64,6 +80,7 @@ const NipponExpresskote = () => {
                 width={64}
                 height={64}
                 className="rounded-lg object-contain w-full h-full"
+                priority // Important for above-the-fold images
               />
             </div>
           </div>
