@@ -11,7 +11,7 @@ const whatsappConfig = {
 
 // Construct final URL with cache control
 const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
-const pageUrl = 'https://www.alwaqaspaint.com/products/nippon-flexiseal';
+const pageUrl = 'https://www.alwaqaspaint.com/products/nippon-flexiseal-elastomeric';
 
 export const metadata = {
   title: "Nippon FlexiSeal Elastomeric Membrane | Alwaqas Paint",
