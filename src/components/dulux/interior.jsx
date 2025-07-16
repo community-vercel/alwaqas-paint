@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import BaseProductDetail from "./../../../components/interior/BaseProductDetail";
+import BaseProductDetail from "./../../components/dulux/BaseDetailPage";
 
 // Reusable Dulux Product Detail Component
 const DuluxProductDetail = ({ product, onClose }) => {
