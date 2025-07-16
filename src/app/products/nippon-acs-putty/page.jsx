@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import BaseProductDetail from './../../../components/interior/BaseProductDetail';
 import Image from 'next/image';
 
@@ -32,9 +33,16 @@ const NipponExpresskote = () => {
   const productDescription = "A high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces.";
 
   return (
+    <>   
+     <Head>
+    <meta property="og:title" content="WhatsApp"/>
+  <meta property="og:description" content="Simple. Secure. Reliable messaging."/>
+  <meta property="og:url" content="https://whatsapp.com"/>
+  <meta property="og:image"content="https://www.alwaqaspaint.com/ACS-Putty-1.png"/>
+    </Head>
     <BaseProductDetail
       productName={productName}
-      productImage="/ACS-Putty-1.png" // Make sure this matches your public folder structure
+      productImage="/ACS-Putty-1.png" 
       category=""
       productDescription={
         <div className="prose max-w-none">
@@ -64,6 +72,8 @@ const NipponExpresskote = () => {
       ]}
       technicalDataSheetUrl="/pdf/NPPK-Putty-ACS-Putty-TDS_compressed.pdf"
     />
+    </>
+
   );
 };
 
