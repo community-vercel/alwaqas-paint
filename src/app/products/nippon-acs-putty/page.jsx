@@ -1,18 +1,26 @@
-import Head from 'next/head';
 import BaseProductDetail from './../../../components/interior/BaseProductDetail';
 import Image from 'next/image';
+
+// Add cache-busting parameter
+const imageVersion = Date.now();
+const productImageUrl = `https://www.alwaqaspaint.com/ACS-Putty-1.png?${imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/products/nippon-acs-putty';
 
 export const metadata = {
   title: "Nippon ACS Putty | Alwaqas Paint",
   description: "High quality filler for patching cracks and leveling uneven surfaces. Provides perfect smooth finish with excellent workability.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
   openGraph: {
     title: "Nippon ACS Putty | Alwaqas Paint",
     description: "Premium filler for perfect smooth finishes on walls and surfaces. Enhances top coat performance.",
-    url: "https://www.alwaqaspaint.com/products/nippon-acs-putty",
+    url: pageUrl,
     type: "website",
     images: [
       {
-        url: "https://www.alwaqaspaint.com/ACS-Putty-1.png", // Use direct image URL, not Next.js optimized one
+        url: productImageUrl,
         width: 1200,
         height: 630,
         alt: "Nippon ACS Putty Product",
@@ -24,8 +32,11 @@ export const metadata = {
     card: "summary_large_image",
     title: "Nippon ACS Putty | Alwaqas Paint",
     description: "Premium filler for perfect smooth finishes on walls and surfaces.",
-    images: ["https://www.alwaqaspaint.com/ACS-Putty-1.png"],
+    images: [productImageUrl],
   },
+  other: {
+    "og:image:secure_url": productImageUrl,
+  }
 };
 
 const NipponExpresskote = () => {
@@ -33,16 +44,9 @@ const NipponExpresskote = () => {
   const productDescription = "A high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces.";
 
   return (
-    <>   
-     <Head>
-    <meta property="og:title" content="Nippon ACS Putty"/>
-  <meta property="og:description" content="A high quality filler for patching cracks, levelling uneven rough porous cement walls, plaster work and filling defective surfaces"/>
-  <meta property="og:url" content="https://www.alwaqaspaint.com"/>
-  <meta property="og:image"content="https://www.alwaqaspaint.com/ACS-Putty-1.png"/>
-    </Head>
     <BaseProductDetail
       productName={productName}
-      productImage="/ACS-Putty-1.png" 
+      productImage="/ACS-Putty-1.png"
       category=""
       productDescription={
         <div className="prose max-w-none">
@@ -72,8 +76,6 @@ const NipponExpresskote = () => {
       ]}
       technicalDataSheetUrl="/pdf/NPPK-Putty-ACS-Putty-TDS_compressed.pdf"
     />
-    </>
-
   );
 };
 
