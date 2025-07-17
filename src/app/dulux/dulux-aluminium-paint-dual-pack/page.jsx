@@ -1,4 +1,5 @@
 
+
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
 import Image from 'next/image';
 
@@ -73,8 +74,8 @@ const AluminiumPaintDualPack = () => {
       "Apply two coats of Dulux Aluminium and leave for 16 hours between coats.",
     downloads: {
       sds: "/pdf/dulux/xx_pk_en_dulux_aluminium_paint_dual_packf33809804383299.pdf",
-      tds: "/pdf/dulux/tds_aluminium_paint_dual_pack.pdf",
-      warranty: "/pdf/dulux/warranty_aluminium_paint_dual_pack.pdf",
+      // tds: "/pdf/dulux/tds_aluminium_paint_dual_pack.pdf",
+      // warranty: "/pdf/dulux/warranty_aluminium_paint_dual_pack.pdf",
     },
   };
 
