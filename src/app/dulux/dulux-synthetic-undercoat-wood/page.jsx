@@ -1,19 +1,67 @@
-"use client";
 
-import Head from "next/head";
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
 
-const AmbianceDiamondGlo = () => {
+// WhatsApp / social sharing config
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/10.png",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-synthetic-undercoat-wood';
+
+export const metadata = {
+  title: "Dulux Synthetic Undercoat | Wood & Metal Primer | Alwaqas Paint",
+  description: "High-quality solvent-based primer for wood and metal. Seals, protects, and improves adhesion for topcoats. No added lead or mercury.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Synthetic Undercoat | Wood & Metal Surface Primer",
+    description: "Solvent-based undercoat for interior & exterior wood and metal. Prevents rust, seals surfaces, and ensures topcoat performance.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Synthetic Undercoat Product",
+        type: "image/png",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Synthetic Undercoat | Alwaqas Paint",
+    description: "Premium undercoat for wood and metal. Great adhesion and anti-rust protection.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/png",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Synthetic Undercoat Product",
+  }
+};
+
+const DuluxSyntheticUndercoat = () => {
   const product = {
     id: 1,
     title: "Dulux Synthetic Undercoat Wood and Metal Primer",
-    image: "/dulux/10.avif",
+    image: "/dulux/10.png",
     description:
-      "Dulux Synthetic Undercoat is a high quality solvent based primer for all kinds of interior & exterior wood & metal surfaces. It protects the metal surface from rust & gives uniform appearance to topcoat; act as a sealant for wood surfaces to provide uniform appearance & adhesion with topcoat.",
+      "Dulux Synthetic Undercoat is a high-quality solvent-based primer for all kinds of interior and exterior wood and metal surfaces. It protects metal from rust and acts as a sealant for wood, ensuring uniform appearance and strong adhesion for topcoats.",
     keyInformation: {
       finish: "Matt",
-      coverage: "11-13 m2/L",
-      dryingTime: "16 Hours between coats",
+      coverage: "11–13 m²/L",
+      dryingTime: "16 hours between coats",
       coats: "1",
     },
     features: [
@@ -22,7 +70,7 @@ const AmbianceDiamondGlo = () => {
       "No Added Lead or Mercury",
     ],
     applicationDescription:
-      "Apply 2-3 coats of dulux Synthetic Undercoat and leave for 16 hours between coats",
+      "Apply 2–3 coats of Dulux Synthetic Undercoat and leave for 16 hours between coats.",
     downloads: {
       sds: "/pdf/dulux/xx_pk_en_dulux_synthetic_undercoatf54286404383324.pdf",
       tds: "/pdf/dulux/tds_dulux_synthetic_undercoat_pk.pdf",
@@ -30,120 +78,7 @@ const AmbianceDiamondGlo = () => {
     },
   };
 
-  // Structured data for the AmbianceDiamondGlo page
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Product",
-        "@id": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo/#product",
-        "name": product.title,
-        "url": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo",
-        "image": `https://al-waqas-paints.vercel.app${product.image}`,
-        "description": product.description,
-        "sku": "DUL-001",
-        "category": "Primers",
-        "brand": {
-          "@type": "Brand",
-          "name": "Dulux",
-        },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "PKR",
-          "price": "6000", // Replace with actual price
-          "availability": "http://schema.org/InStock",
-          "url": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo",
-        },
-        "additionalProperty": [
-          ...product.features.map((feature) => ({
-            "@type": "PropertyValue",
-            "name": "Feature",
-            "value": feature,
-          })),
-          {
-            "@type": "PropertyValue",
-            "name": "Finish",
-            "value": product.keyInformation.finish,
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Coverage",
-            "value": product.keyInformation.coverage,
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Drying Time",
-            "value": product.keyInformation.dryingTime,
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Coats",
-            "value": product.keyInformation.coats,
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Application Instructions",
-            "value": product.applicationDescription,
-          },
-        ],
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://al-waqas-paints.vercel.app/",
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Dulux Products",
-            "item": "https://al-waqas-paints.vercel.app/dulux",
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": product.title,
-            "item": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo",
-          },
-        ],
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo/#webpage",
-        "url": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo",
-        "name": `${product.title} | Al-Waqas Paint`,
-        "description": product.description,
-        "inLanguage": "en-PK",
-        "isPartOf": {
-          "@id": "https://al-waqas-paints.vercel.app/#website",
-        },
-        "publisher": {
-          "@id": "https://al-waqas-paints.vercel.app/#organization",
-        },
-        "breadcrumb": {
-          "@id": "https://al-waqas-paints.vercel.app/dulux/ambiance-diamond-glo/#breadcrumb",
-        },
-      },
-    ],
-  };
-
-  return (
-    <>
-      <Head>
-        <title>{product.title} | Al-Waqas Paint</title>
-        <meta name="description" content={product.description} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-      <BaseDetailPage product={product} />
-    </>
-  );
+  return <BaseDetailPage product={product} />;
 };
 
-export default AmbianceDiamondGlo;
+export default DuluxSyntheticUndercoat;

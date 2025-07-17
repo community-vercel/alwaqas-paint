@@ -5,7 +5,7 @@ import Image from 'next/image';
 // WhatsApp-optimized configuration
 const whatsappConfig = {
   imageVersion: "1.0",
-  baseImageUrl: "https://www.alwaqaspaint.com/dulux/20.avif",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/20.png",
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -32,7 +32,7 @@ export const metadata = {
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Dulux Ambiance Velvet Touch Metallic Copper Product",
-        type: "image/avif",
+        type: "image/png",
       },
     ],
     siteName: "Alwaqas Paint",
@@ -45,7 +45,7 @@ export const metadata = {
   },
   other: {
     "og:image:secure_url": productImageUrl,
-    "og:image:type": "image/avif",
+    "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
     "og:image:height": whatsappConfig.imageHeight.toString(),
     "og:image:alt": "Dulux Ambiance Velvet Touch Metallic Copper Product",
@@ -56,7 +56,7 @@ const VelvetTouchMetallicCopper = () => {
   const product = {
     id: 11,
     title: "Dulux Ambiance Velvet Touch Metallic Copper",
-    image: "/dulux/20.avif",
+    image: "/dulux/20.png",
     description:
       "Dulux Velvet Touch Metallic Copper is acrylic based interior premium quality paint. It is a part of our special effects range, designed to deliver wide variety of wall impacts with a unique metallic finish. It is available in Copper colour. It is recommended for interior use only.",
     keyInformation: {

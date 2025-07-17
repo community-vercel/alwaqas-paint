@@ -5,7 +5,7 @@ import Image from 'next/image';
 // WhatsApp-optimized configuration
 const whatsappConfig = {
   imageVersion: "1.0",
-  baseImageUrl: "https://www.alwaqaspaint.com/dulux/17.avif",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/17.png",
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -32,7 +32,7 @@ export const metadata = {
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Dulux Ambiance Velvet Touch Marble Product",
-        type: "image/avif",
+        type: "image/png",
       },
     ],
     siteName: "Alwaqas Paint",
@@ -45,7 +45,7 @@ export const metadata = {
   },
   other: {
     "og:image:secure_url": productImageUrl,
-    "og:image:type": "image/avif",
+    "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
     "og:image:height": whatsappConfig.imageHeight.toString(),
     "og:image:alt": "Dulux Ambiance Velvet Touch Marble Product",
@@ -56,7 +56,7 @@ const VelvetTouchMarble = () => {
   const product = {
     id: 8,
     title: "Dulux Ambiance Velvet Touch Marble",
-    image: "/dulux/17.avif",
+    image: "/dulux/17.png",
     description:
       "Dulux Velvet Touch Marble is acrylic based interior premium quality paint. It is a part of our special effects range. Inspired by the land of finest Marble Stone, creates the luxurious touch of marble finish on your walls. Marble is available in selected tintable Dulux colours and offers a range of trendy shades. It is recommended for interior use only.",
     keyInformation: {

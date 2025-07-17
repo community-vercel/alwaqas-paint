@@ -6,7 +6,7 @@ import Image from 'next/image';
 // WhatsApp-optimized configuration
 const whatsappConfig = {
   imageVersion: "1.0",
-  baseImageUrl: "https://www.alwaqaspaint.com/dulux/13.avif",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/13.png",
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -33,7 +33,7 @@ export const metadata = {
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Dulux Aluminium Paint Dual Pack Product",
-        type: "image/avif",
+        type: "image/png",
       },
     ],
     siteName: "Alwaqas Paint",
@@ -46,7 +46,7 @@ export const metadata = {
   },
   other: {
     "og:image:secure_url": productImageUrl,
-    "og:image:type": "image/avif",
+    "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
     "og:image:height": whatsappConfig.imageHeight.toString(),
     "og:image:alt": "Dulux Aluminium Paint Dual Pack Product",
@@ -57,7 +57,7 @@ const AluminiumPaintDualPack = () => {
   const product = {
     id: 4,
     title: "Dulux Aluminium Paint Dual Pack",
-    image: "/dulux/13.avif",
+    image: "/dulux/13.png",
     description:
       "Dulux Aluminium Paint Dual Pack is a silver paint with a high metallic luster, which protects the surface from corrosion, discoloration and the effects of heat.",
     keyInformation: {

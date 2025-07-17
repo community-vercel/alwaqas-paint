@@ -1,12 +1,61 @@
-"use client";
-
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
+
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/15.png",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-ambiance-velvet-touch-metallic-gold';
+
+export const metadata = {
+  title: "Dulux Ambiance Velvet Touch Metallic Gold",
+  description: "Premium acrylic-based interior paint with a unique metallic finish, tintable in selected Dulux colours for striking wall impacts.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Ambiance Velvet Touch Metallic Gold",
+    description: "Special effects interior paint with a pure metallic finish in gold, ideal for creating impactful and luxurious interior walls.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Ambiance Velvet Touch Metallic Gold Product",
+        type: "image/png",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Ambiance Velvet Touch Metallic Gold | Alwaqas Paint",
+    description: "Premium interior paint with a metallic gold finish, offering a unique and stylish aesthetic for interior walls.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/png",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Ambiance Velvet Touch Metallic Gold Product",
+  }
+};
 
 const VelvetTouchMetallicGold = () => {
   const product = {
     id: 6,
     title: "Dulux Ambiance Velvet Touch Metallic Gold",
-    image: "/dulux/15.avif",
+    image: "/dulux/15.png",
     description:
       "Dulux Velvet Touch Metallic Gold is an acrylic based interior premium quality paint. It is a part of our special effects range, designed to deliver wide variety of wall impacts with a unique metallic finish. Metallic Gold can be tinted in selected Dulux colours. It is recommended for interior use only.",
     keyInformation: {
@@ -24,11 +73,15 @@ const VelvetTouchMetallicGold = () => {
     downloads: {
       sds: "/pdf/dulux/msds_dvt_metallics.pdf",
       tds: "/pdf/dulux/tds_vt_metallic.pdf",
-      warranty: "/pdf/dulux/warranty_velvet_touch_metallic_gold.pdf",
+      // warranty: "/pdf/dulux/warranty_velvet_touch_metallic_gold.pdf",
     },
   };
 
-  return <BaseDetailPage product={product} />;
+  return (
+    <BaseDetailPage
+      product={product}
+    />
+  );
 };
 
 export default VelvetTouchMetallicGold;

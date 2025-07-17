@@ -5,7 +5,7 @@ import Image from 'next/image';
 // WhatsApp-optimized configuration
 const whatsappConfig = {
   imageVersion: "1.0",
-  baseImageUrl: "https://www.alwaqaspaint.com/dulux/34.avif",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/34.png",
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -32,7 +32,7 @@ export const metadata = {
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Dulux Ambiance Velvet Touch Linen Product",
-        type: "image/avif",
+        type: "image/png",
       },
     ],
     siteName: "Alwaqas Paint",
@@ -45,7 +45,7 @@ export const metadata = {
   },
   other: {
     "og:image:secure_url": productImageUrl,
-    "og:image:type": "image/avif",
+    "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
     "og:image:height": whatsappConfig.imageHeight.toString(),
     "og:image:alt": "Dulux Ambiance Velvet Touch Linen Product",
@@ -56,7 +56,7 @@ const DuluxAmbianceVelvetTouchLinen = () => {
   const product = {
     id: 34,
     title: "Dulux Ambiance Velvet Touch Linen",
-    image: "/dulux/34.avif",
+    image: "/dulux/34.png",
     description: "Dulux Velvet Touch Linen is a premium special effects paint designed to deliver a wide variety of wall patterns with unique textured fabric effects on your walls. Velvet Touch Linen can be tinted in selected Dulux colours. Recommended for interior use only.",
     keyInformation: {
       finish: "Featured Finishes",

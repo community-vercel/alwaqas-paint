@@ -1,12 +1,62 @@
-"use client";
 
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
+
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/16.png",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-ambiance-velvet-touch-velvet-gold';
+
+export const metadata = {
+  title: "Dulux Ambiance Velvet Touch Silk Gold",
+  description: "Premium acrylic-based interior paint with a luxurious fabric finish, inspired by Persian fabrics, in tintable Dulux colours.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Ambiance Velvet Touch Silk Gold",
+    description: "Special effects interior paint with a luxurious fabric finish in silk gold, ideal for creating timeless and trendy wall aesthetics.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Ambiance Velvet Touch Silk Gold Product",
+        type: "image/png",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Ambiance Velvet Touch Silk Gold | Alwaqas Paint",
+    description: "Premium interior paint with a silk gold fabric finish, offering a luxurious and stylish aesthetic for interior walls.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/png",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Ambiance Velvet Touch Silk Gold Product",
+  }
+};
 
 const VelvetTouchSilkGold = () => {
   const product = {
     id: 7,
-    title: "Dulux Ambiance Velvet Touch Velvet Gold",
-    image: "/dulux/16.avif",
+    title: "Dulux Ambiance Velvet Touch Silk Gold",
+    image: "/dulux/16.png",
     description:
       "Dulux Velvet Touch Silk Gold is an acrylic based interior premium quality paint which is a part of our special effects range. It is inspired by the smoothest fabrics of Persia & delivers a luxurious fabric finish to your walls for a timeless touch. Velvet Touch Gold is available in selected tintable Dulux colours and offers a range of trendy shades. It is recommended for interior use only.",
     keyInformation: {
@@ -24,11 +74,15 @@ const VelvetTouchSilkGold = () => {
     downloads: {
       sds: "/pdf/dulux/msds_dvt_silk.pdf",
       tds: "/pdf/dulux/tds_vt_silk.pdf",
-      warranty: "/pdf/dulux/warranty_velvet_touch_silk_gold.pdf",
+      // warranty: "/pdf/dulux/warranty_velvet_touch_silk_gold.pdf",
     },
   };
 
-  return <BaseDetailPage product={product} />;
+  return (
+    <BaseDetailPage
+      product={product}
+    />
+  );
 };
 
 export default VelvetTouchSilkGold;
