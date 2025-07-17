@@ -1,4 +1,4 @@
-import BaseDetailPage from "../../../../components/master/ExtDetails";
+import BaseDetailPage from "../../../../components/master/BaseDetails";
 import Image from 'next/image';
 
 // WhatsApp-optimized configuration
