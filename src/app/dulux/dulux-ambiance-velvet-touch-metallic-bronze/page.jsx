@@ -5,7 +5,7 @@ import Image from 'next/image';
 // WhatsApp-optimized configuration
 const whatsappConfig = {
   imageVersion: "1.0",
-  baseImageUrl: "https://www.alwaqaspaint.com/dulux/19.avif",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/19.png",
   imageWidth: 1200,
   imageHeight: 630
 };
@@ -32,7 +32,7 @@ export const metadata = {
         width: whatsappConfig.imageWidth,
         height: whatsappConfig.imageHeight,
         alt: "Dulux Ambiance Velvet Touch Metallic Bronze Product",
-        type: "image/avif",
+        type: "image/png",
       },
     ],
     siteName: "Alwaqas Paint",
@@ -45,7 +45,7 @@ export const metadata = {
   },
   other: {
     "og:image:secure_url": productImageUrl,
-    "og:image:type": "image/avif",
+    "og:image:type": "image/png",
     "og:image:width": whatsappConfig.imageWidth.toString(),
     "og:image:height": whatsappConfig.imageHeight.toString(),
     "og:image:alt": "Dulux Ambiance Velvet Touch Metallic Bronze Product",
@@ -56,7 +56,7 @@ const VelvetTouchMetallicBronze = () => {
   const product = {
     id: 10,
     title: "Dulux Ambiance Velvet Touch Metallic Bronze",
-    image: "/dulux/19.avif",
+    image: "/dulux/19.png",
     description:
       "Dulux Velvet Touch Metallic Bronze is an acrylic based interior premium quality paint. It is a part of our special effects range, designed to deliver wide variety of wall impacts with a unique metallic finish. Velvet Touch Metallic Bronze is available in Molten Bronze colour. It is recommended for interior use only.",
     keyInformation: {
