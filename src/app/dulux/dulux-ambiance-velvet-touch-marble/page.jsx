@@ -1,6 +1,56 @@
-"use client";
 
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
+
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/17.avif",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-ambiance-velvet-touch-marble';
+
+export const metadata = {
+  title: "Dulux Ambiance Velvet Touch Marble",
+  description: "Premium acrylic-based interior paint with a luxurious marble finish, offering trendy tintable shades for interior walls.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Ambiance Velvet Touch Marble",
+    description: "Special effects interior paint inspired by fine marble stone, delivering a luxurious marble finish in selected Dulux colours.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Ambiance Velvet Touch Marble Product",
+        type: "image/avif",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Ambiance Velvet Touch Marble | Alwaqas Paint",
+    description: "Premium interior paint with a marble finish, offering trendy shades and a luxurious aesthetic for interior walls.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/avif",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Ambiance Velvet Touch Marble Product",
+  }
+};
 
 const VelvetTouchMarble = () => {
   const product = {
@@ -24,11 +74,15 @@ const VelvetTouchMarble = () => {
     downloads: {
       sds: "/pdf/dulux/msds_dvt_marble.pdf",
       tds: "/pdf/dulux/tds_vt_marble.pdf",
-      warranty: "/pdf/dulux/warranty_velvet_touch_marble.pdf",
+      // warranty: "/pdf/dulux/warranty_velvet_touch_marble.pdf",
     },
   };
 
-  return <BaseDetailPage product={product} />;
+  return (
+    <BaseDetailPage
+      product={product}
+    />
+  );
 };
 
 export default VelvetTouchMarble;

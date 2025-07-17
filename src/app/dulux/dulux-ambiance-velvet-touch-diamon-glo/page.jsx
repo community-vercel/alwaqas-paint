@@ -1,6 +1,56 @@
-"use client";
 
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
+
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/Dulux Ambiance.webp",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-ambiance-velvet-touch-diamon-glo';
+
+export const metadata = {
+  title: "Dulux Ambiance Velvet Touch Diamond Glo",
+  description: "Ultra-luxurious acrylic-based interior emulsion with a smooth velvet touch, ideal for interior masonry surfaces.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Ambiance Velvet Touch Diamond Glo",
+    description: "Premium interior emulsion with high sheen, anti-bacterial, anti-mould, and low VOC properties for a luxurious and durable finish.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Ambiance Velvet Touch Diamond Glo Product",
+        type: "image/webp",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Ambiance Velvet Touch Diamond Glo | Alwaqas Paint",
+    description: "Premium interior emulsion with high sheen, anti-bacterial, and low VOC properties for a luxurious and durable finish.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/webp",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Ambiance Velvet Touch Diamond Glo Product",
+  }
+};
 
 const AmbianceDiamondGlo = () => {
   const product = {
@@ -37,7 +87,11 @@ const AmbianceDiamondGlo = () => {
     }
   };
 
-  return <BaseDetailPage product={product} />;
+  return (
+    <BaseDetailPage
+      product={product}
+    />
+  );
 };
 
 export default AmbianceDiamondGlo;
