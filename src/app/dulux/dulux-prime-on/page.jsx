@@ -1,4 +1,4 @@
-"use client";
+
 
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
 import Image from 'next/image';
