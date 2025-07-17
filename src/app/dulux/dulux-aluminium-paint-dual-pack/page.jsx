@@ -1,6 +1,56 @@
-"use client";
 
 import BaseDetailPage from "../../../components/dulux/BaseDetailPage";
+import Image from 'next/image';
+
+// WhatsApp-optimized configuration
+const whatsappConfig = {
+  imageVersion: "1.0",
+  baseImageUrl: "https://www.alwaqaspaint.com/dulux/13.avif",
+  imageWidth: 1200,
+  imageHeight: 630
+};
+
+// Construct final URL with cache control
+const productImageUrl = `${whatsappConfig.baseImageUrl}?v=${whatsappConfig.imageVersion}`;
+const pageUrl = 'https://www.alwaqaspaint.com/dulux/dulux-aluminium-paint-dual-pack';
+
+export const metadata = {
+  title: "Dulux Aluminium Paint Dual Pack",
+  description: "Silver paint with high metallic luster, offering protection against corrosion, discoloration, and heat effects.",
+  metadataBase: new URL('https://www.alwaqaspaint.com'),
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Dulux Aluminium Paint Dual Pack",
+    description: "High-quality silver paint with anti-rust properties and high metallic luster for durable surface protection.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: productImageUrl,
+        width: whatsappConfig.imageWidth,
+        height: whatsappConfig.imageHeight,
+        alt: "Dulux Aluminium Paint Dual Pack Product",
+        type: "image/avif",
+      },
+    ],
+    siteName: "Alwaqas Paint",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dulux Aluminium Paint Dual Pack | Alwaqas Paint",
+    description: "Silver paint with anti-rust properties, high metallic luster, and protection against corrosion and heat.",
+    images: [productImageUrl],
+  },
+  other: {
+    "og:image:secure_url": productImageUrl,
+    "og:image:type": "image/avif",
+    "og:image:width": whatsappConfig.imageWidth.toString(),
+    "og:image:height": whatsappConfig.imageHeight.toString(),
+    "og:image:alt": "Dulux Aluminium Paint Dual Pack Product",
+  }
+};
 
 const AluminiumPaintDualPack = () => {
   const product = {
@@ -28,7 +78,11 @@ const AluminiumPaintDualPack = () => {
     },
   };
 
-  return <BaseDetailPage product={product} />;
+  return (
+    <BaseDetailPage
+      product={product}
+    />
+  );
 };
 
 export default AluminiumPaintDualPack;
