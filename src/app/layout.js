@@ -31,7 +31,7 @@ export const metadata = {
     site_name: "Al-Waqas Paint",
     images: [
       {
-        url: "https://www.alwaqaspaint.com/logoal-.png",
+        url: "https://www.alwaqaspaint.com/AlWaqas Paint & Hardware.svg",
         width: 1200,
         height: 630,
       },
