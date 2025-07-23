@@ -31,7 +31,7 @@ export default function About() {
         <meta name="description" content="Learn about Al-Waqas Paint, a trusted name in premium, eco-conscious coating solutions for interiors, exteriors, and specialized surfaces." />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://www.alwaqaspaint.com/about/" />
+        <link rel="canonical" href="https://www.alwaqaspaint.com/about" />
         
       </Head>
       <Script
