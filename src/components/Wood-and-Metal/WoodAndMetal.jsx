@@ -318,42 +318,42 @@ const WoodAndMetalCom = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://al-waqas-paints.vercel.app/products/wood-and-metal/#webpage",
-        "url": "https://al-waqas-paints.vercel.app/products/wood-and-metal",
+        "@id": "https://alwaqaspaint.com/products/wood-and-metal/#webpage",
+        "url": "https://alwaqaspaint.com/products/wood-and-metal",
         "name": "Wood & Metal Paints | Al-Waqas Paint",
         "description": "Explore our range of sealer & thinner, lacquer, and top coats for wood and metal from Nippon, including Timber Finish Wood Sealer, Timber Finish Thinner, Timber Finish PU Varnish, Timber Finish Matt Lacquer, Synthetic Clear Varnish, Timber Finish C W Lacquer, Q-Lac Gloss Enamel, 9000 Gloss Finish Enamel, Hydrogloss Enamel, and Platone High Gloss Enamel.",
         "inLanguage": "en-PK",
         "isPartOf": {
-          "@id": "https://al-waqas-paints.vercel.app/#website"
+          "@id": "https://alwaqaspaint.com/#website"
         },
         "publisher": {
-          "@id": "https://al-waqas-paints.vercel.app/#organization"
+          "@id": "https://alwaqaspaint.com/#organization"
         },
         "breadcrumb": {
-          "@id": "https://al-waqas-paints.vercel.app/products/wood-and-metal/#breadcrumb"
+          "@id": "https://alwaqaspaint.com/products/wood-and-metal/#breadcrumb"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://al-waqas-paints.vercel.app/products/wood-and-metal/#breadcrumb",
+        "@id": "https://alwaqaspaint.com/products/wood-and-metal/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://al-waqas-paints.vercel.app/"
+            "item": "https://alwaqaspaint.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Products",
-            "item": "https://al-waqas-paints.vercel.app/products"
+            "item": "https://alwaqaspaint.com/products"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Wood & Metal",
-            "item": "https://al-waqas-paints.vercel.app/products/wood-and-metal"
+            "item": "https://alwaqaspaint.com/products/wood-and-metal"
           }
         ]
       }

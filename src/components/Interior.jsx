@@ -302,19 +302,19 @@ const Interior = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://al-waqas-paints.vercel.app/products/interior/#webpage",
-        "url": "https://al-waqas-paints.vercel.app/products/interior",
+        "@id": "https://alwaqaspaint.com/products/interior/#webpage",
+        "url": "https://alwaqaspaint.com/products/interior",
         "name": "Interior Paints | Al-Waqas Paint",
         "description": "Explore our range of water-based matt emulsion, interior emulsion, matt enamel, and textured series paints from Nippon, including Odour-less AirCare, Spot-Less, Easywash, Glamour, Matex Pro, Quality Emulsion, Easy Coat, Super Matex, Matex Gold, Perfect Emulsion, Crystal Matt Enamel, Brilliance Matt Enamel, Satin Glo Matt Enamel, Momento Gold Frost, Momento Pearl Frost, Texture Nippon'eon, and Momento Snow Frost.",
         "inLanguage": "en-PK",
         "isPartOf": {
-          "@id": "https://al-waqas-paints.vercel.app/#website"
+          "@id": "https://alwaqaspaint.com/#website"
         },
         "publisher": {
-          "@id": "https://al-waqas-paints.vercel.app/#organization"
+          "@id": "https://alwaqaspaint.com/#organization"
         },
         "breadcrumb": {
-          "@id": "https://al-waqas-paints.vercel.app/products/interior/#breadcrumb"
+          "@id": "https://alwaqaspaint.com/products/interior/#breadcrumb"
         }
       },
       {
@@ -326,8 +326,8 @@ const Interior = () => {
           "item": {
             "@type": "Product",
             "name": product.title,
-            "url": `https://al-waqas-paints.vercel.app${product.detailsLink}`,
-            "image": `https://al-waqas-paints.vercel.app${product.image}`,
+            "url": `https://alwaqaspaint.com${product.detailsLink}`,
+            "image": `https://alwaqaspaint.com${product.image}`,
             "description": `Premium ${product.title} interior paint by Nippon for durable and vibrant finishes.`,
             "sku": `NIP-${String(product.id).padStart(3, "0")}`,
             "category": product.category,
@@ -340,38 +340,38 @@ const Interior = () => {
               "priceCurrency": "PKR",
               "price": product.id <= 4 ? (product.id === 1 ? "5000" : product.id === 2 ? "5500" : product.id === 3 ? "5200" : "5300") : "5100",
               "availability": "http://schema.org/InStock",
-              "url": `https://al-waqas-paints.vercel.app${product.detailsLink}`
+              "url": `https://alwaqaspaint.com${product.detailsLink}`
             }
           }
         }))
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://al-waqas-paints.vercel.app/products/interior/#breadcrumb",
+        "@id": "https://alwaqaspaint.com/products/interior/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://al-waqas-paints.vercel.app/"
+            "item": "https://alwaqaspaint.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Products",
-            "item": "https://al-waqas-paints.vercel.app/products"
+            "item": "https://alwaqaspaint.com/products/interior"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Interior",
-            "item": "https://al-waqas-paints.vercel.app/products/interior"
+            "item": "https://alwaqaspaint.com/products/interior"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Interior Paints",
-            "item": "https://al-waqas-paints.vercel.app/products/interior"
+            "item": "https://alwaqaspaint.com/products/interior"
           }
         ]
       }
