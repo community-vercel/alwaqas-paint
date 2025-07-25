@@ -114,7 +114,7 @@ const Navbar = () => {
           <div className='w-full sm:w-auto flex justify-center sm:block'>
             <a
               href='tel:+923335093223'
-              className='px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-300 inline-block'
+              className='px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-300 hidden  sm:inline-block'
             >
               Call Now
             </a>
@@ -135,9 +135,11 @@ const Navbar = () => {
               className='rounded-full'
             />
           </Link>
+          
 
           {/* Desktop Navigation */}
           <nav className='hidden md:flex items-center space-x-1 font-bold'>
+            
             <Link
               href='/'
               className={`px-3 py-2 text-sm font-bold ${
@@ -537,6 +539,14 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Menu Button */}
+          <div className=''>
+            <a
+              href='tel:+923335093223'
+              className='px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-300 lg:hidden md:hidden sm:inline-block'
+            >
+              Call Now
+            </a>
+          </div>
           <div className='md:hidden flex items-center'>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
